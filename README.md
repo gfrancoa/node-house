@@ -11,3 +11,5 @@ Modules:
 -DB in Mongo Atlas
 
 -Handling auth-service
+
+-All backend: done
