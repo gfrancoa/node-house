@@ -13,11 +13,11 @@ router.delete(
 );
 router.put("/:_id", checkAuth.verificarToken, mobiliarioCtrl.updateMobiliario);
 router.get(
-  "/:empleado",
+  "empleado/:empleado",
   checkAuth.verificarToken,
   mobiliarioCtrl.getMobiliarioByEmpleado
 );
-router.patch("/:_id/:count", mobiliarioCtrl.updateCountById);
+router.patch("/:_id", mobiliarioCtrl.updateCountById);
 router.get("/popular", mobiliarioCtrl.mostViewed);
 
 module.exports = router;

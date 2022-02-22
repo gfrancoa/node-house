@@ -80,7 +80,8 @@ const getMobiliarioByEmpleado = async (req, res) => {
 };
 
 const updateCountById = async (req, res) => {
-  const { _id, count } = req.params;
+  const { _id } = req.params;
+  const count = req.body.count;
   const mobiliario = await Mobiliario.findOneAndUpdate(
     { _id: _id },
     { num_interesados: count }
