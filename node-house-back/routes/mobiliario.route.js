@@ -13,7 +13,7 @@ router.delete(
 );
 router.put("/:_id", checkAuth.verificarToken, mobiliarioCtrl.updateMobiliario);
 router.get(
-  "empleado/:empleado",
+  "/empleado/:empleado",
   checkAuth.verificarToken,
   mobiliarioCtrl.getMobiliarioByEmpleado
 );

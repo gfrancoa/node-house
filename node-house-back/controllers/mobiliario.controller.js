@@ -74,7 +74,9 @@ const updateMobiliario = async (req, res) => {
 };
 
 const getMobiliarioByEmpleado = async (req, res) => {
+  console.log("get mobiliario by empl req", req);
   const { empleado } = req.params;
+  console.log("EMPLEADO", empleado);
   const mobiliario = await Mobiliario.find({ created_by: empleado });
   res.json(mobiliario);
 };

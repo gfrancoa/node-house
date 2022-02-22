@@ -54,7 +54,6 @@ export class HomeEmpleadoComponent implements OnInit {
       sector: ['', Validators.required],
       descripcion: ['', Validators.required],
       canon: ['', Validators.required],
-      numInteresados: ['', Validators.required],
       foto: ['', Validators.required],
     });
 
@@ -89,8 +88,9 @@ export class HomeEmpleadoComponent implements OnInit {
     if (this.form.invalid)
       //el return detiene la ejecución así que si la condicion de invalid se
       //cumple no se ejecutará el método add
-      return;
+      return console.log('form invalido');
     this.add();
+    console.log('se añadio el form')
   }
 
   add() {
@@ -121,6 +121,7 @@ export class HomeEmpleadoComponent implements OnInit {
         .createMobiliario(this.token, formValues)
         .subscribe({
           next: (res: any) => {
+            console.log('res create mobiliario', res);
             if (res.status) {
               console.log('Registro creado', res);
             }
@@ -240,6 +241,7 @@ export class HomeEmpleadoComponent implements OnInit {
       .mobiliarioByEmpleado(this.token, this.userId)
       .subscribe({
         next: (res: any) => {
+          console.log('res front mob by empl',res)
           if (res.length > 0) {
             this.mobiliarios = res;
           }
