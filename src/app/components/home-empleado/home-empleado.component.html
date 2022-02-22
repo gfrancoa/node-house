@@ -32,10 +32,10 @@
       id="banos"
       type="number"
       class="form-control"
-      formControlName="numBaños"
+      formControlName="numBanos"
       [ngClass]="{
-        'error-validation': submitted && f['numBaños'].errors,
-        'success-validation': numBaños.valid && (numBaños.dirty || numBaños.touched)
+        'error-validation': submitted && f['numBanos'].errors,
+        'success-validation': numBanos.valid && (numBanos.dirty || numBanos.touched)
       }"
     />
     <label for="piso">Piso:</label>
@@ -141,7 +141,7 @@
         <th scope="col">Canon</th>
         <th scope="col">Num. interesados</th>
        
-        <th scope="col">Actions</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody *ngIf="mobiliarios && mobiliarios.length > 0">

@@ -18,7 +18,7 @@ export class HomeEmpleadoComponent implements OnInit {
   public form: FormGroup;
   public tipoMobiliario: AbstractControl;
   public numHabitaciones: AbstractControl;
-  public numBaños: AbstractControl;
+  public numBanos: AbstractControl;
   public tienePatio: AbstractControl;
   public tieneCocinaIntegral: AbstractControl;
   public piso: AbstractControl;
@@ -47,7 +47,7 @@ export class HomeEmpleadoComponent implements OnInit {
     this.form = this.formBuilder.group({
       tipoMobiliario: ['', Validators.required],
       numHabitaciones: ['', Validators.required],
-      numBaños: ['', Validators.required],
+      numBanos: ['', Validators.required],
       tienePatio: ['', Validators.required],
       tieneCocinaIntegral: ['', Validators.required],
       piso: ['', Validators.required],
@@ -61,7 +61,7 @@ export class HomeEmpleadoComponent implements OnInit {
     //se está asociando las variables con los campos del formulario
     this.tipoMobiliario = this.form.controls['tipoMobiliario'];
     this.numHabitaciones = this.form.controls['numHabitaciones'];
-    this.numBaños = this.form.controls['numBaños'];
+    this.numBanos = this.form.controls['numBanos'];
     this.tienePatio = this.form.controls['tienePatio'];
     this.tieneCocinaIntegral = this.form.controls['tieneCocinaIntegral'];
     this.piso = this.form.controls['piso'];
@@ -102,7 +102,7 @@ export class HomeEmpleadoComponent implements OnInit {
         tipo_mobiliario: this.form.get('tipoMobiliario')?.value,
         caracteristicas: {
           num_habitaciones: Number(this.form.get('numHabitaciones')?.value),
-          num_baños: Number(this.form.get('numBaños')?.value),
+          num_baños: Number(this.form.get('numBanos')?.value),
           tiene_patio:
             this.form.get('tienePatio')?.value == 'SI' ? true : false,
           is_cocina_integral:
@@ -179,7 +179,7 @@ export class HomeEmpleadoComponent implements OnInit {
               tipo_mobiliario: this.form.get('tipoMobiliario')?.value,
 
               num_habitaciones: Number(this.form.get('numHabitaciones')?.value),
-              num_baños: Number(this.form.get('numBaños')?.value),
+              num_baños: Number(this.form.get('numBanos')?.value),
               tiene_patio:
                 this.form.get('tienePatio')?.value == 'SI' ? true : false,
               is_cocina_integral:

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
           console.log('respuesta login', res);
           if (res.token) {
             this.loginValid = true;
-            this.authService.saveLoginToken(res.token);
+            this.authService.saveLoginToken(res.token, res.userId);
             console.log('Usuario loggeado', res);
           } else {
             this.loginValid = false;

@@ -11,12 +11,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeEmpleadoComponent } from './components/home-empleado/home-empleado.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CardComponent, LoginComponent, HomeEmpleadoComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CardComponent,
+    LoginComponent,
+    HomeEmpleadoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +32,7 @@ import { HomeEmpleadoComponent } from './components/home-empleado/home-empleado.
     MatInputModule,
     MatCardModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
   ],
   providers: [],

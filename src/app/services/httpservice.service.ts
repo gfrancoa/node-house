@@ -43,7 +43,7 @@ export class HttpserviceService {
 
   mobiliarioByEmpleado(token: string, idEmpleado: any) {
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
-    return this.http.get(this.URL_API + '/mobiliario/empleado' + idEmpleado, {
+    return this.http.get(this.URL_API + '/mobiliario/empleado/' + idEmpleado, {
       headers: headers,
     });
   }
