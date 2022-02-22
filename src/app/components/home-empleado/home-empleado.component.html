@@ -1,6 +1,7 @@
 <div class="text-center contenido">
   <div class="banner">
     <h3 class="banner-text">Administración de publicaciones</h3>
+    <button class="btn" (click)="removeToken()">Cerrar sesión</button>
   </div>
   <form [formGroup]="form" class="form-style">
       <!-- CAMBIAR A DROPDOWN -->
@@ -136,6 +137,7 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
+        <th scope="col">Foto</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Sector</th>
         <th scope="col">Canon</th>
@@ -147,7 +149,8 @@
     <tbody *ngIf="mobiliarios && mobiliarios.length > 0">
       <tr *ngFor="let item of mobiliarios">
         <th scope="row">{{ item._id | slice: 0:10 }}...</th>
-        <td>{{ item._id }}</td>
+        
+        <td><img [src]="item.foto" alt="" height="30px" width="30px"></td>
         <td>{{ item.descripcion }}</td>
         <td>{{ item.sector }}</td>
         <td>{{ item.canon }}</td>

@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ConfigService } from 'src/app/services/config.service';
 import { HttpserviceService } from 'src/app/services/httpservice.service';
@@ -40,7 +41,8 @@ export class HomeEmpleadoComponent implements OnInit {
     public formBuilder: FormBuilder,
     public config: ConfigService,
     private mobiliarioService: HttpserviceService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
     //se esta construyendo el formulario y se esta colocando
     //que todos los campos son requeridos
@@ -76,10 +78,17 @@ export class HomeEmpleadoComponent implements OnInit {
     this.userId = this.authService.getUserId() as string;
     this.ciudades = this.mobiliarioService.getCiudades();
     this.list();
+    if (!this.authService.isLogged()) {
+      this.router.navigate(['/login']);
+    }
   }
 
   get f() {
     return this.form.controls;
+  }
+
+  removeToken() {
+    this.authService.logout();
   }
 
   validacion() {
@@ -90,7 +99,7 @@ export class HomeEmpleadoComponent implements OnInit {
       //cumple no se ejecutará el método add
       return console.log('form invalido');
     this.add();
-    console.log('se añadio el form')
+    console.log('se añadio el form');
   }
 
   add() {
@@ -241,7 +250,7 @@ export class HomeEmpleadoComponent implements OnInit {
       .mobiliarioByEmpleado(this.token, this.userId)
       .subscribe({
         next: (res: any) => {
-          console.log('res front mob by empl',res)
+          console.log('res front mob by empl', res);
           if (res.length > 0) {
             this.mobiliarios = res;
           }
