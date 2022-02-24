@@ -152,31 +152,41 @@ export class HomeEmpleadoComponent implements OnInit {
     this.editting = false;
   }
 
-  // edit(item: any) {
-  //   console.log(item);
-  //   this.form.get('document')?.setValue(item.document);
-  //   this.form.get('name')?.setValue(item.name);
-  //   this.form.get('phone')?.setValue(item.phone);
-  //   this.form.get('email')?.setValue(item.email);
-  //   this.form.get('salary')?.setValue(item.salary);
-  //   this.form.get('isFemale')?.setValue(item.isFemale == true ? 'f' : 'm');
-  //   this.form.get('dateOfBirth')?.setValue(item.dateOfBirth);
-  //   this.selectedId = item._id;
-  //   this.editting = true;
-  // }
+  edit(item: any) {
+    console.log(item);
 
-  // selectGender(value: any) {
-  //   console.log('item de select gender', value);
+    this.form.get('tipoMobiliario')?.setValue(item.tipo_mobiliario),
+      this.form
+        .get('numHabitaciones')
+        ?.setValue(item.caracteristicas.num_habitaciones);
+    this.form.get('numBanos')?.setValue(item.caracteristicas.num_baños);
+    this.form
+      .get('tienePatio')
+      ?.setValue(item.caracteristicas.tienePatio ? 'SI' : 'NO');
+    this.form
+      .get('tieneCocinaIntegral')
+      ?.setValue(item.tieneCocinaIntegral ? 'SI' : 'NO');
+    this.form.get('piso')?.setValue(item.caracteristicas.piso);
+    this.form.get('sector')?.setValue(item.sector);
+    this.form.get('descripcion')?.setValue(item.descripcion);
+    this.form.get('canon')?.setValue(item.canon);
+    this.form.get('foto')?.setValue(item.foto);
+    this.selectedId = item._id;
+    this.editting = true;
+  }
 
-  //   this.form.get('isFemale')?.setValue(value);
-  //   console.log('form values', this.form.value);
-  // }
+  selectGender(value: any) {
+    console.log('item de select gender', value);
 
-  // selectDate(value: any) {
-  //   console.log('item de select date', value.target.value);
+    this.form.get('isFemale')?.setValue(value);
+    console.log('form values', this.form.value);
+  }
 
-  //   this.form.get('dateOfBirth')?.setValue(value.target.value);
-  // }
+  selectDate(value: any) {
+    console.log('item de select date', value.target.value);
+
+    this.form.get('dateOfBirth')?.setValue(value.target.value);
+  }
 
   commitEdit() {
     this.editting = false;

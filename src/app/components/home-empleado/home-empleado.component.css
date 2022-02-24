@@ -67,7 +67,7 @@ input[type='radio']{
    
 }
 
-.label-radio{
+.label-radio, .label-radio2{
     display: flex;
     
     align-items: center;
@@ -75,6 +75,14 @@ input[type='radio']{
     filter:hue-rotate(250deg);  
     
 }
+
+.btn-transparent{
+    background-color: transparent;
+    border: 0;
+}
+
+
+
 
 
 
@@ -96,11 +104,11 @@ input[type='radio']{
 }
 
 .btn-success{
-    background-color: green;
+    background-color: blue;
 }
 
 .btn-success:hover{
-    background-color: rgb(7, 112, 7);
+    background-color: rgb(23, 7, 112);
 }
 
 .btn-danger{
@@ -109,7 +117,7 @@ input[type='radio']{
 
 label{
     text-align: left;
-    color: rgb(23, 100, 13);
+    color: rgb(13, 51, 100);
 }
 
 .form-style{

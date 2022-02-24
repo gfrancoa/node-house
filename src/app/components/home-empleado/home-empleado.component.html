@@ -1,6 +1,9 @@
 <div class="text-center contenido">
   <div class="banner">
-    <h3 class="banner-text">Administración de publicaciones</h3>
+      <button class="btn-transparent" [routerLink]="['/']" routerLinkActive="router-link-active"  >  
+        <h3 class="banner-text">NodeHouse</h3>
+      </button>
+    
     <button class="btn" (click)="removeToken()">Cerrar sesión</button>
   </div>
   <form [formGroup]="form" class="form-style">
@@ -157,8 +160,8 @@
         <td>{{ item.num_interesados }}</td>
      
         <td>
-          <button class="btn btn-success" >Editar</button>
-          <!-- (click)="edit(item)" -->
+          <button class="btn btn-success" (click)="edit(item)">Editar</button>
+          <!--  -->
           <button class="btn btn-danger" (click)="delete(item._id)">
             Borrar
           </button>
