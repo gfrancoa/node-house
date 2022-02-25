@@ -14,6 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeEmpleadoComponent } from './components/home-empleado/home-empleado.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HomeEmpleadoComponent } from './components/home-empleado/home-empleado.
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
